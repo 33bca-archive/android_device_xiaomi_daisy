@@ -101,6 +101,10 @@ PRODUCT_BOOT_JARS += \
 PRODUCT_PACKAGES += \
     lineage.trust@1.0-service
 
+# USB
+PRODUCT_PACKAGES += \
+    android.hardware.usb@1.0-service.daisy
+
 # VNDK-SP
 PRODUCT_PACKAGES += \
     vndk-sp
