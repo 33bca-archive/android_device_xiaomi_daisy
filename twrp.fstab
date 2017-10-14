@@ -1,14 +1,10 @@
-#/dev/block/bootdevice/by-name/boot         /boot           emmc    defaults                                                        defaults
+# Mount point    FStype            Device                                   Flags
 /boot            emmc             /dev/block/bootdevice/by-name/boot       flags=slotselect;display="Boot"
 /system          ext4             /dev/block/bootdevice/by-name/system     flags=slotselect;display="System"
-#/vendor          ext4             /dev/block/bootdevice/by-name/vendor     flags=slotselect;display="Vendor";backup=1
-#/vendor_image    emmc             /dev/block/bootdevice/by-name/vendor     flags=slotselect
 /data	         ext4             /dev/block/bootdevice/by-name/userdata
 /misc	         emmc             /dev/block/bootdevice/by-name/misc
-#/recovery        emmc            /dev/block/bootdevice/by-name/recovery   flags=backup=1
 /efs1            emmc             /dev/block/bootdevice/by-name/modemst1   flags=backup=1;display=EFS
 /efs2            emmc             /dev/block/bootdevice/by-name/modemst2   flags=backup=1;subpartitionof=/efs1
 
 /usb-otg         auto             /devices/soc/7000000.ssusb/7000000.dwc3/xhci-hcd.0.auto*     flags=display="USB-OTG";storage;wipeingui;removable
-#/sdcard          auto             /dev/block/mmcblk1p1                        flags=display="MicroSD";storage;wipeingui;removable
 /sdcard1         auto             /devices/soc/7864900.sdhci/mmc_host*         flags=display="MicroSD";storage;wipeingui;removable
