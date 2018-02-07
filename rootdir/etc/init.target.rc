@@ -1,4 +1,7 @@
 on init
+    # Charger
+    mount none /sbin/chargeonlymode /sbin/charger bind
+
     # Kernel Modules
     mount none /system/lib/modules/wlan.ko /vendor/lib/modules/wlan.ko bind
     mount none /system/lib/modules/wlan.ko /vendor/lib/modules/pronto/pronto_wlan.ko bind

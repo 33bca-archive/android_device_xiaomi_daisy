@@ -139,6 +139,9 @@ lib64/vendor.qti.hardware.iop@1.0.so
 lib64/vendor.qti.hardware.iop@2.0.so
 lib64/vendor.qti.hardware.perf@1.0.so
 
+# Power-off charging daemon
+-sbin/charger:sbin/chargeonlymode;rootfs|664dfa548b81cac348f1699222160f8d2b4d247c
+
 # QMI
 etc/permissions/qti_permissions.xml
 lib/libdiag_system.so
