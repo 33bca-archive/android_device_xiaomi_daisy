@@ -16,7 +16,7 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifeq ($(TARGET_DEVICE), tissot)
+ifeq ($(TARGET_DEVICE), daisy)
 
 include $(call all-makefiles-under,$(LOCAL_PATH))
 
