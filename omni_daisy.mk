@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2017 The Android Open Source Project
+# Copyright (C) 2018 The TwrpBuilder Open-Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,25 +14,38 @@
 # limitations under the License.
 #
 
-# Specify phone tech before including full_phone
-$(call inherit-product, vendor/omni/config/gsm.mk)
+# Release name
+PRODUCT_RELEASE_NAME := daisy
 
-# Inherit some common Omni stuff.
+$(call inherit-product, build/target/product/embedded.mk)
+
+# Inherit from our custom product configuration
 $(call inherit-product, vendor/omni/config/common.mk)
-
-# Inherit Telephony packages
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # Inherit language packages
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
 # Charger
 PRODUCT_PACKAGES += \
-    charger_res_images
+    charger_res_images \
+    charger
+
+# Define time zone data path
+ifneq ($(wildcard bionic/libc/zoneinfo),)
+    TZDATAPATH := bionic/libc/zoneinfo
+else ifneq ($(wildcard system/timezone),)
+    TZDATAPATH := system/timezone/output_data/iana
+endif
+
+# Time Zone data for Recovery
+ifdef TZDATAPATH
+PRODUCT_COPY_FILES += \
+    $(TZDATAPATH)/tzdata:recovery/root/system/usr/share/zoneinfo/tzdata
+endif
 
 ## Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := daisy
 PRODUCT_NAME := omni_daisy
+PRODUCT_DEVICE := daisy
 PRODUCT_BRAND := Xiaomi
-PRODUCT_MODEL := MI A2 Lite
+PRODUCT_MODEL := Mi A2 Lite
 PRODUCT_MANUFACTURER := Xiaomi
