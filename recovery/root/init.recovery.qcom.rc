@@ -103,9 +103,17 @@ on boot
     setprop sys.usb.config adb
 
 on init
+    #setprop ro.build.version.release 8.1.0
+    #setprop ro.build.version.security_patch 2018-07-01
+    #start servicemanager
     start hwservicemanager
     start boot-1-0
     start prepdecrypt
+    start sbinqseecomd
+    #start keymaster-3-0
+
+on property:fde.ready=1
+    start keymaster-3-0
 
 on property:crypto.ready=0
     stop sbinqseecomd

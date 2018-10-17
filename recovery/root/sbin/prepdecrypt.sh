@@ -14,7 +14,7 @@ finish()
 	umount /s
 	rmdir /v
 	rmdir /s
-	setprop crypto.ready 1
+	setprop fde.ready 1
 	exit 0
 }
 
@@ -23,21 +23,21 @@ if [ -z "$suffix" ]; then
 	suf=$(getprop ro.boot.slot)
 	suffix="_$suf"
 fi
-venpath="/dev/block/bootdevice/by-name/vendor$suffix"
-mkdir /v
-mount -t ext4 -o ro "$venpath" /v
+#venpath="/dev/block/bootdevice/by-name/vendor$suffix"
+#mkdir /v
+#mount -t ext4 -o ro "$venpath" /v
 syspath="/dev/block/bootdevice/by-name/system$suffix"
 mkdir /s
 mount -t ext4 -o ro "$syspath" /s
 
-is_fastboot_twrp=$(getprop ro.boot.fastboot)
-if [ ! -z "$is_fastboot_twrp" ]; then
-	osver=$(getprop ro.build.version.release_orig)
-	patchlevel=$(getprop ro.build.version.security_patch_orig)
-	setprop ro.build.version.release "$osver"
-	setprop ro.build.version.security_patch "$patchlevel"
-	finish
-fi
+#is_fastboot_twrp=$(getprop ro.boot.fastboot)
+#if [ ! -z "$is_fastboot_twrp" ]; then
+	#osver=$(getprop ro.build.version.release_orig)
+	#patchlevel=$(getprop ro.build.version.security_patch_orig)
+	#setprop ro.build.version.release "$osver"
+	#setprop ro.build.version.security_patch "$patchlevel"
+	#finish
+#fi
 
 if [ -f /s/system/build.prop ]; then
 	# TODO: It may be better to try to read these from the boot image than from /system
@@ -54,6 +54,7 @@ else
 	setprop ro.build.version.security_patch "$patchlevel"
 	finish
 fi
+finish
 
 mkdir -p /vendor/lib64/hw/
 
