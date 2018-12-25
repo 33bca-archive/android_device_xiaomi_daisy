@@ -91,3 +91,11 @@ PRODUCT_COPY_FILES += \
 # VNDK-SP
 PRODUCT_PACKAGES += \
     vndk-sp
+
+# WFD
+PRODUCT_PACKAGES += \
+    libnl \
+    libwfdaac
+
+PRODUCT_BOOT_JARS += \
+    WfdCommon
