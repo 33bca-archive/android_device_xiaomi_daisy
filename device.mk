@@ -96,6 +96,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_BOOT_JARS += \
     telephony-ext
 
+# Trust HAL
+PRODUCT_PACKAGES += \
+    lineage.trust@1.0-service
+
 # VNDK-SP
 PRODUCT_PACKAGES += \
     vndk-sp
