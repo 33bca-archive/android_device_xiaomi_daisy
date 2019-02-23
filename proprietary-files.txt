@@ -106,6 +106,14 @@ lib64/vendor.display.color@1.1.so
 lib64/vendor.display.color@1.2.so
 lib64/vendor.display.postproc@1.0.so
 
+# Perf
+bin/perfservice
+etc/init/perfservice.rc
+lib64/libqti-iopd-client_system.so
+lib64/libqti-util_system.so
+lib/libqti-iopd-client_system.so
+lib/libqti-util_system.so
+
 # QMI
 etc/permissions/qti_permissions.xml
 lib/libdiag_system.so
