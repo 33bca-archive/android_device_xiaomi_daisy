@@ -46,6 +46,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     hardware/qcom/audio/configs/msm8996/audio_policy.conf:system/etc/audio_policy.conf
 
+# Device init scripts
+PRODUCT_PACKAGES += \
+    init.target.rc
+
 # HIDL
 PRODUCT_PACKAGES += \
     android.hidl.base@1.0 \
