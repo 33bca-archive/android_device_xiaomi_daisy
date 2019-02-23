@@ -1,0 +1,3 @@
+on init
+    mount none /system/lib/modules/wlan.ko /vendor/lib/modules/wlan.ko bind
+    mount none /system/lib/modules/wlan.ko /vendor/lib/modules/pronto/pronto_wlan.ko bind
