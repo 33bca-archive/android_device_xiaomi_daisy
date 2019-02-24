@@ -104,5 +104,9 @@ TW_EXCLUDE_DEFAULT_USB_INIT := true
 TARGET_RECOVERY_DEVICE_MODULES += android.hardware.boot@1.0
 TW_RECOVERY_ADDITIONAL_RELINK_FILES := ${OUT}/system/lib64/android.hardware.boot@1.0.so
 
+# Recovery Installer
+USE_RECOVERY_INSTALLER := true
+RECOVERY_INSTALLER_PATH := $(LOCAL_PATH)/installer
+
 # Security Patch Hack to prevent Anti Rollback
 PLATFORM_SECURITY_PATCH := 2018-07-01
