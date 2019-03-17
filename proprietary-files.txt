@@ -70,6 +70,14 @@ lib/libdpmframework.so
 lib/libdpmtcm.so
 -priv-app/dpmserviceapp/dpmserviceapp.apk
 
+# FM
+lib64/fm_helium.so
+lib64/libfm-hci.so
+-lib64/vendor.qti.hardware.fm@1.0.so
+lib/fm_helium.so
+lib/libfm-hci.so
+-lib/vendor.qti.hardware.fm@1.0.so
+
 # GPS
 etc/permissions/com.qti.location.sdk.xml
 etc/permissions/com.qualcomm.location.xml
