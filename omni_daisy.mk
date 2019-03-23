@@ -61,6 +61,10 @@ PRODUCT_PACKAGES += \
     charger_res_images \
     charger
 
+# Keymaster
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.hardware.keystore=msm8953
+
 # Update engine
 PRODUCT_PACKAGES += \
     update_engine \
