@@ -49,3 +49,7 @@ PRODUCT_PACKAGES += \
 # Telephony
 PRODUCT_BOOT_JARS += \
     telephony-ext
+
+# VNDK-SP
+PRODUCT_PACKAGES += \
+    vndk-sp
