@@ -107,13 +107,4 @@
     <carrier_config mcc="647" mnc="03">
         <string-array name="read_only_apn_types_string_array" num="0" />
     </carrier_config>
-    <carrier_config mcc="222" mnc="50">
-        <string-array name="read_only_apn_types_string_array" num="0" />
-    </carrier_config>
-    <carrier_config mcc="208" mnc="15">
-        <string-array name="read_only_apn_types_string_array" num="0" />
-    </carrier_config>
-    <carrier_config mcc="647" mnc="03">
-        <string-array name="read_only_apn_types_string_array" num="0" />
-    </carrier_config>
 </carrier_config_list>
