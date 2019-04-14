@@ -51,9 +51,6 @@ PRODUCT_PACKAGES += \
     android.hardware.audio.effect@4.0 \
     libaudio-resampler
 
-PRODUCT_COPY_FILES += \
-    hardware/qcom/audio-caf/msm8996/configs/msm8996/audio_policy.conf:system/etc/audio_policy.conf
-
 # Camera
 PRODUCT_PACKAGES += \
     Snap
