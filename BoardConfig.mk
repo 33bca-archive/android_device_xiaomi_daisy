@@ -90,6 +90,7 @@ TARGET_COPY_OUT_VENDOR := vendor
 # TWRP Configuration
 AB_OTA_UPDATER := true
 TW_USE_TOOLBOX := true
+TW_HAS_EDL_MODE := true
 TW_THEME := portrait_hdpi
 TW_INCLUDE_CRYPTO := true
 TW_MAX_BRIGHTNESS := 101
