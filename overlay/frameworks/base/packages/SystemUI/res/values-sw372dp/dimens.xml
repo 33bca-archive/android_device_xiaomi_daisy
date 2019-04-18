@@ -16,7 +16,6 @@
 */
 -->
 <resources>
-    <dimen name="rounded_corner_radius">3dp</dimen>
-    <dimen name="rounded_corner_content_padding">9dp</dimen>
-    <dimen name="rounded_statusbar_extra_padding">5dp</dimen>
+    <dimen name="rounded_corner_radius">4dp</dimen>
+    <dimen name="rounded_corner_content_padding">6dp</dimen>
 </resources>
