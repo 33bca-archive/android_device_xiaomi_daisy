@@ -1,0 +1,3 @@
+# !/system/bin/sh
+sleep 15s &&
+service call SurfaceFlinger 1008 i32 1
