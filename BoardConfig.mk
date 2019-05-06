@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2018 The TwrpBuilder Open-Source Project
+# Copyright (C) 2019 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -103,9 +103,6 @@ TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 RECOVERY_SDCARD_ON_DATA := true
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
 TW_EXCLUDE_DEFAULT_USB_INIT := true
-
-TARGET_RECOVERY_DEVICE_MODULES += android.hardware.boot@1.0
-TW_RECOVERY_ADDITIONAL_RELINK_FILES := ${OUT}/system/lib64/android.hardware.boot@1.0.so
 
 # Recovery Installer
 USE_RECOVERY_INSTALLER := true

@@ -32,7 +32,10 @@ on fs
     chown system drmrpc /dev/qseecom
     chmod 0664 /dev/ion
     chown system system /dev/ion
+    start pulldecryptfiles
     install_keyring
+    setprop ro.build.system_root_image true
+    setprop ro.hardware.bootctrl msm8953
 
 # Needed to make qseecomd work in recovery
     chmod 0777 /dev/qseecom
@@ -42,90 +45,16 @@ on fs
     start hwservicemanager
     start servicemanager
 
-# Separate copy needed to use /sbin/linker64 instead of /system/bin/linker64
-service sbinqseecomd /sbin/qseecomd
-    user root
-    group root
-    disabled
-    seclabel u:r:recovery:s0
-
-service prepdecrypt /sbin/prepdecrypt.sh
-    oneshot
-    disabled
-    user root
-    group root
-    seclabel u:r:recovery:s0
-
-service hwservicemanager /sbin/hwservicemanager
-    user root
-    group root
-    disabled
-    onrestart setprop hwservicemanager.ready false
-    seclabel u:r:recovery:s0
-
-service boot-1-0 /sbin/android.hardware.boot@1.0-service
-    user root
-    group root
-    disabled
-    seclabel u:r:recovery:s0
-
-service servicemanager /sbin/servicemanager
-    user root
-    group root readproc
-    disabled
-    seclabel u:r:recovery:s0
-
-service keystore_auth /sbin/keystore_auth
-    oneshot
-    user system
-    group root
-    disabled
-    seclabel u:r:recovery:s0
-
-# keystore is started and stopped on demand by TWRP
-service keystore /sbin/keystore /tmp/misc/keystore
-    user root
-    group root drmrpc readproc
-    disabled
-    seclabel u:r:recovery:s0
-
-service gatekeeper-1-0 /sbin/android.hardware.gatekeeper@1.0-service-qti
-    user root
-    group root
-    disabled
-    seclabel u:r:recovery:s0
-
-service keymaster-3-0 /sbin/android.hardware.keymaster@3.0-service-qti
-    user root
-    group root
-    disabled
-    seclabel u:r:recovery:s0
-
 on boot
     setprop sys.usb.config none
-    setprop sys.usb.config adb
+    setprop sys.usb.config mtp,adb
 
-on init
-    #setprop ro.build.version.release 8.1.0
-    #setprop ro.build.version.security_patch 2018-07-01
-    #start servicemanager
-    start hwservicemanager
-    start boot-1-0
-    start prepdecrypt
+on property:ro.crypto.state=encrypted
     start sbinqseecomd
-    #start keymaster-3-0
 
-on property:fde.ready=1
-    start keymaster-3-0
-
-on property:crypto.ready=0
-    stop sbinqseecomd
-    stop keymaster-3-0
-    stop gatekeeper-1-0
-    stop servicemanager
-
-on property:crypto.ready=1
-    start sbinqseecomd
-    start keymaster-3-0
-    start gatekeeper-1-0
-    start servicemanager
+# Separate copy needed to use /sbin/linker64 instead of /system/bin/linker64
+service sbinqseecomd /sbin/qseecomd
+    disabled
+    user root
+    group root
+    seclabel u:r:recovery:s0

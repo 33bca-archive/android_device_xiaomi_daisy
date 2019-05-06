@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2018 The TwrpBuilder Open-Source Project
+# Copyright 2019 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,8 +14,12 @@
 # limitations under the License.
 #
 
-LOCAL_PATH := $(call my-dir)
+# This file is executed by build/envsetup.sh, and can use anything
+# defined in envsetup.sh.
+#
+# In particular, you can add lunch options with the add_lunch_combo
+# function: add_lunch_combo generic-eng
 
-ifneq ($(filter daisy,$(TARGET_DEVICE)),)
-include $(call all-makefiles-under,$(LOCAL_PATH))
-endif
+for var in eng user userdebug; do
+  add_lunch_combo omni_daisy-$var
+done
