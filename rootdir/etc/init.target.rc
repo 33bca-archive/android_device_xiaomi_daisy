@@ -1,3 +1,10 @@
 on init
+    # Kernel Modules
     mount none /system/lib/modules/wlan.ko /vendor/lib/modules/wlan.ko bind
     mount none /system/lib/modules/wlan.ko /vendor/lib/modules/pronto/pronto_wlan.ko bind
+
+    # Camera Blobs
+    mount none /system/lib/android.frameworks.sensorservice@1.0-v27.so /vendor/lib/android.frameworks.sensorservice@1.0-v27.so bind
+    mount none /system/lib/libvidhance_gyro.so /vendor/lib/libvidhance_gyro.so bind
+    mount none /system/lib/hw/camera.msm8953.so /vendor/lib/hw/camera.msm8953.so bind
+    mount none /system/lib64/android.frameworks.sensorservice@1.0-v27.so /vendor/lib64/android.frameworks.sensorservice@1.0-v27.so bind
