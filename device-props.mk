@@ -4,6 +4,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
+    persist.camera.eis.enabled=1 \
+    persist.camera.HAL3.enabled=1 \
     persist.vendor.camera.display.lmax=1280x720 \
     persist.vendor.camera.display.umax=1920x1080 \
     vendor.camera.hal1.packagelist=com.skype.raider,com.google.android.talk \
