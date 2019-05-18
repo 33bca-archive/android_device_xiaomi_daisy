@@ -133,6 +133,9 @@ TARGET_USES_MKE2FS := true
 
 TARGET_COPY_OUT_VENDOR := vendor
 
+# Power
+TARGET_TAP_TO_WAKE_NODE := "/proc/touchpanel/wakeup_gesture"
+
 # Recovery
 BOARD_USES_RECOVERY_AS_BOOT := true
 TARGET_NO_RECOVERY := true
