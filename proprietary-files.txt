@@ -17,6 +17,10 @@ lib64/libcdsprpc_system.so
 lib64/libmdsprpc_system.so
 lib64/libsdsprpc_system.so
 
+# Bluetooth
+lib/android.hardware.bluetooth.a2dp@1.0.so
+lib64/android.hardware.bluetooth.a2dp@1.0.so
+
 # Bluetooth (aptX) - from crosshatch - PD1A.180720.030
 lib64/libaptX_encoder.so|0cebad28afcf29f931bdc2d24fce2730dc882ecf
 lib64/libaptXHD_encoder.so|90f47f10af28b3ead143200cb4370b847c513127
