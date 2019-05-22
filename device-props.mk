@@ -8,7 +8,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.camera.HAL3.enabled=1 \
     persist.vendor.camera.display.lmax=1280x720 \
     persist.vendor.camera.display.umax=1920x1080 \
-    vendor.camera.hal1.packagelist=com.skype.raider,com.google.android.talk \
+    vendor.camera.hal1.packagelist=com.skype.raider,com.google.android.talk,com.whatsapp \
     vendor.camera.lowpower.record.enable=1 \
     vidc.enc.dcvs.extra-buff-count=2
 
