@@ -53,6 +53,9 @@ print "#########################################"
 	extract "$zip" "$tmp"
 }
 cd "$tmp"
+systempath="/system/system"
+scriptname="/99-twrp.sh"
+script="$tmp$scriptname"
 toolname="/magiskboot"
 tool="$tmp$toolname"
 targetfile="/boot.img"
@@ -80,5 +83,12 @@ dd if=new-boot.img of=/dev/block/bootdevice/by-name/boot_b
 
 print "Boot image patching complete"
 
-#cleanup
+unmount /system
+mount /system
+print "Make TWRP persistent..."
+cp -f "$tool" "$systempath/bin$toolname"
+cp -f "$script" "$systempath/addon.d$scriptname"
+unmount /system
+
+cleanup
 print "Done installing TWRP!"
