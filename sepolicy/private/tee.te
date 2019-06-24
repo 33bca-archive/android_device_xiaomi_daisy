@@ -1,0 +1,3 @@
+allow tee mnt_vendor_file:dir rw_dir_perms;
+allow tee mnt_vendor_file:file rw_file_perms;
+allow tee persist_file:lnk_file read;

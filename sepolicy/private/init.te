@@ -1,0 +1,5 @@
+# Allow init to chown / chmod to pseudo files
+allow init proc_touchpanel:file setattr;
+
+# Allow init to mount files to vendor
+allow init vendor_file:file mounton;

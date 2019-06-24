@@ -1,0 +1,2 @@
+allow hal_fingerprint default_android_hwservice:hwservice_manager add;
+allow hal_fingerprint system_data_file:file rw_file_perms;
