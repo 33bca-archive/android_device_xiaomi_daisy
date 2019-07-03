@@ -9,6 +9,9 @@ on init
     mount none /system/lib/hw/camera.msm8953.so /vendor/lib/hw/camera.msm8953.so bind
     mount none /system/lib64/android.frameworks.sensorservice@1.0-v27.so /vendor/lib64/android.frameworks.sensorservice@1.0-v27.so bind
 
+    # Media Profile
+    mount none /system/etc/media_profiles_V1_0.xml /vendor/etc/media_profiles_V1_0.xml bind
+
     # Power HAL
     mount none /system/lib/hw/power.qcom.so /vendor/lib/hw/power.qcom.so bind
     mount none /system/lib64/hw/power.qcom.so /vendor/lib64/hw/power.qcom.so bind

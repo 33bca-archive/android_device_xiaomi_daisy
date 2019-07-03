@@ -3,3 +3,4 @@ allow init proc_touchpanel:file setattr;
 
 # Allow init to mount files to vendor
 allow init vendor_file:file mounton;
+allow init vendor_configs_file:file mounton;

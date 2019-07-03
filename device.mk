@@ -111,6 +111,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     lineage.livedisplay@2.0-service-sdm
 
+# Media
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/media_profiles_V1_0.xml:system/etc/media_profiles_V1_0.xml
+
 # Power
 PRODUCT_PACKAGES += \
     power.qcom

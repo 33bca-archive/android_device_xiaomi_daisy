@@ -19,3 +19,6 @@
 
 # Kernel Modules
 /system/lib/modules/wlan\.ko    u:object_r:vendor_file:s0
+
+# Media Profile
+/system/etc/media_profiles_V1_0.xml    u:object_r:vendor_configs_file:s0
